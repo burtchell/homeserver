@@ -3,6 +3,6 @@
   mount:
     name: "/mnt/passport"
     src: "/dev/sdb1"
-    fstype: xfs
+    fstype: ntfs
     state: mounted
     passno: "2"

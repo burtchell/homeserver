@@ -10,22 +10,23 @@
 - name: Make sure the {{ container_name }} container is created and running
   docker_container:
     name: "{{ container_name }}"
-    image: "jellyfin/jellyfin"
+    image: "lscr.io/linuxserver/jellyfin"
     pull: yes
     privileged: yes
-    devices:
-      - "/dev/dri/renderD128:/dev/dri/renderD128"
     state: 'started'
     env:
       "PUID": "{{ guid }}"
       "PGID": "{{ guid }}"
+      "TZ": "{{ timezone }}"
       "VERSION": "latest"
     volumes:
       - "/home/brandon/docker/jellyfin/config:/config"
-      - "/home/brandon/docker/jellyfin/cache:/cache"
-    mounts:
-      - source: "/mnt/passport"
-        target: "/media"
-        type: "bind"
-
+      - "/mnt/passport/Movies:/data/movies"
+      - "/mnt/passport/Shows:/data/tvshows"
+    # mounts:
+    #   - source: "/mnt/passport"
+    #     target: "/media"
+    #     type: "bind"
+    ports:
+      - 8096:8096
     restart_policy: unless-stopped

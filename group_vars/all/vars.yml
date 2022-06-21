@@ -3,6 +3,7 @@ username: brandon
 guid: '1000'
 locale: en_US.UTF-8
 dotfiles_repo: https://github.com/dukeofjukes/dotfiles
+timezone: "America/Chicago"
 
 # apt mirrors
 version: focal

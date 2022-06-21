@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - import_tasks: tasks/essential.yml
+    - import_tasks: tasks/install_docker.yml

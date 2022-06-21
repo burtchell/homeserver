@@ -1,0 +1,15 @@
+username: brandon
+
+locale: en_US.UTF-8
+
+# apt mirrors
+version: focal
+apt_mirror: http://archive.ubuntu.com/ubuntu
+
+dotfiles_repo: https://github.com/dukeofjukes/dotfiles
+
+extra_packages:
+  - htop
+  - neofetch
+  - tmux
+  - speedtest-cli

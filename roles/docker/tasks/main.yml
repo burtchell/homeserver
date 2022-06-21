@@ -1,28 +1,23 @@
+---
+- name: Include Ubuntu variables
+  include_vars: "Ubuntu.yml"
+
 - name: Install Prerequisites
   apt:
-    name:
-      - apt-transport-https
-      - ca-certificates
-      - curl
-      - gnupg-agent
-      - software-properties-common
+    name: "{{ docker_dependencies }}"
     update_cache: yes
 
-- name: Add apt-key
+- name: Add Docker GPG apt-key
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
 
-- name: Add docker repository
+- name: Add Docker repository
   apt_repository:
     repo: deb https://download.docker.com/linux/ubuntu focal stable
 
-- name: Install docker
+- name: Install Docker
   apt:
-    name:
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-      - docker-compose-plugin
+    name: "{{ docker_packages }}"
     update_cache: yes
 
 - name: Add userpermissions

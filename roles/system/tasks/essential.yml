@@ -1,3 +1,4 @@
+---
 - name: Update packages
   apt:
     update_cache: yes
@@ -5,7 +6,7 @@
 
 - name: Install essential packages
   package:
-    name: "{{ packages }}"
+    name: "{{ extra_packages }}"
     state: latest
 
 - name: Disable SSH password auth

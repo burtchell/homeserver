@@ -3,9 +3,17 @@
   become: yes
 
   roles:
+    # basics
     - role: system
       tags:
         - system
     - role: docker
       tags:
         - docker
+    - role: mounts
+      tags:
+        - mounts
+
+    # security
+
+    # containers

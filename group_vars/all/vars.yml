@@ -1,15 +1,19 @@
+# misc.
 username: brandon
-
+guid: '1000'
 locale: en_US.UTF-8
+dotfiles_repo: https://github.com/dukeofjukes/dotfiles
 
 # apt mirrors
 version: focal
 apt_mirror: http://archive.ubuntu.com/ubuntu
 
-dotfiles_repo: https://github.com/dukeofjukes/dotfiles
-
+# packages
 extra_packages:
   - htop
   - neofetch
   - tmux
   - speedtest-cli
+
+# enable/disable functionality (docker will check these before launching)
+enable_jellyfin: true

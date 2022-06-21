@@ -17,5 +17,42 @@
     name: "{{ docker_packages }}"
     update_cache: yes
 
-- name: Add userpermissions
-  shell: "usermod -aG docker {{ lookup('env','USER') }}"
+- name: Ensure group docker exists
+  group:
+    name: docker
+    state: present
+
+- name: Add user "{{ username }}" to group docker
+  user:
+    name: '{{ username }}'
+    groups:
+      - docker
+    append: yes
+
+- name: Install Docker Module for Python
+  pip:
+    name: docker
+
+- name: Make sure Docker is running and enabled
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Get a list of containers
+  delegate_to: localhost
+  become: no
+  find:
+    paths:
+      - "roles/containers"
+    file_type: directory
+    recurse: no
+  register: containers
+
+- name: Stop and remove all disabled containers
+  become: no
+  docker_container:
+    name: "{{ item.path.split('/')[-1] }}"
+    state: absent
+  when: not lookup('vars', 'enable_' + item.path.split('/')[-1])
+  with_items: "{{ containers.files }}"

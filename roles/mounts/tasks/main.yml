@@ -1,0 +1,8 @@
+---
+- name: Mount passport USB drive
+  mount:
+    name: "/mnt/passport"
+    src: "/dev/sdb1"
+    fstype: xfs
+    state: mounted
+    passno: "2"

@@ -1,7 +1,4 @@
 ---
-- name: Include Ubuntu variables
-  include_vars: "Ubuntu.yml"
-
 - name: Install Prerequisites
   apt:
     name: "{{ docker_dependencies }}"

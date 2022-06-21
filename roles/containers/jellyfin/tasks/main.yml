@@ -1,0 +1,31 @@
+---
+- name: Make sure that QuickSync packages are installed
+  become: yes
+  package:
+    name:
+      - vainfo
+      - intel-media-va-driver-non-free
+    state: present
+
+- name: Make sure the {{ container_name }} container is created and running
+  docker_container:
+    name: "{{ container_name }}"
+    image: "jellyfin/jellyfin"
+    pull: yes
+    privileged: yes
+    devices:
+      - "/dev/dri/renderD128:/dev/dri/renderD128"
+    state: 'started'
+    env:
+      "PUID": "{{ guid }}"
+      "PGID": "{{ guid }}"
+      "VERSION": "latest"
+    volumes:
+      - "/home/brandon/docker/jellyfin/config:/config"
+      - "/home/brandon/docker/jellyfin/cache:/cache"
+    mounts:
+      - source: "/mnt/passport"
+        target: "/media"
+        type: "bind"
+
+    restart_policy: unless-stopped

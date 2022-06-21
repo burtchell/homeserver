@@ -17,3 +17,9 @@
     # security
 
     # containers
+    - role: containers/jellyfin
+      become: no
+      tags:
+        - jellyfin
+        - containers
+      when: enable_jellyfin | default(False)

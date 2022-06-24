@@ -11,10 +11,19 @@ apt_mirror: http://archive.ubuntu.com/ubuntu
 
 # packages
 extra_packages:
+  - neovim
   - htop
   - neofetch
   - tmux
   - speedtest-cli
+
+extra_brew_packages:
+  - jandedobbeleer/oh-my-posh/oh-my-posh
+  - exa
+  - fish
+  - fisher
+  - lazydocker
+  - ripgrep
 
 # enable/disable functionality (docker will check these before launching)
 enable_jellyfin: true

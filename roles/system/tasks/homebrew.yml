@@ -1,0 +1,14 @@
+---
+- name: Check if Homebrew is already installed
+  stat:
+    path: /home/linuxbrew/.linuxbrew/bin/brew
+  register: brew
+
+- name: Install Homebrew
+  script: install_homebrew.sh
+  when: not brew.stat.exists
+
+# - name: Install essential homebrew packages
+#   homebrew:
+#     name: "{{ extra_brew_packages }}"
+#     state: present

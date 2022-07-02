@@ -8,23 +8,23 @@
     state: "started"
     capabilities: "NET_ADMIN"
     ports:
-      - 0.0.0.0:8112:8122
+      - 0.0.0.0:8112:8112
       - 58846:58846
       - 0.0.0.0:8118:8118
     env:
-      - "VPN_ENABLED": "yes"
-      - "VPN_PROV": "custom"
-      - "VPN_CLIENT": "wireguard"
-      - "ENABLE_PRIVOXY": "yes"
-      - "LAN_NETWORK": "192.168.1.0/24"
-      - "NAME_SERVERS": "1.1.1.1,1.0.0.1"
-      - "DELUGE_DAEMON_LOG_LEVEL": "info"
-      - "DELUGE_WEB_LOG_LEVEL": "info"
-      - "DEBUG": "false"
-      - "UMASK": "000"
-      - "PUID": "{{ guid }}"
-      - "PGID": "{{ guid }}"
-      - "TZ": "{{ timezone }}"
+      "VPN_ENABLED": "yes"
+      "VPN_PROV": "custom"
+      "VPN_CLIENT": "wireguard"
+      "ENABLE_PRIVOXY": "yes"
+      "LAN_NETWORK": "192.168.1.0/24"
+      "NAME_SERVERS": "1.1.1.1,1.0.0.1"
+      "DELUGE_DAEMON_LOG_LEVEL": "info"
+      "DELUGE_WEB_LOG_LEVEL": "info"
+      "DEBUG": "false"
+      "UMASK": "000"
+      "PUID": "{{ guid }}"
+      "PGID": "{{ guid }}"
+      "TZ": "{{ timezone }}"
     volumes:
       - "/home/brandon/docker/arch-delugevpn/config:/config"
       - "/mnt/passport:/downloads"

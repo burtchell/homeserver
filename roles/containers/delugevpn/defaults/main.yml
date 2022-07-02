@@ -1,5 +1,5 @@
 ---
-container_name: arch-delugevpn
+container_name: delugevpn
 # url: "deluge.{{ host_local }}"
 
 # homer_category: _fill_in_later_

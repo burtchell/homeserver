@@ -23,3 +23,10 @@
         - jellyfin
         - containers
       when: enable_jellyfin | default(False)
+
+    - role: containers/arch-delugevpn
+      become: no
+      tags:
+        - arch-delugevpn
+        - containers
+      when: enable_delugevpn | default(False)

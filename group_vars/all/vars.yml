@@ -1,6 +1,6 @@
 # misc.
 username: brandon
-guid: '1000'
+guid: "1000"
 locale: en_US.UTF-8
 dotfiles_repo: https://github.com/dukeofjukes/dotfiles
 timezone: "America/Chicago"
@@ -27,3 +27,4 @@ extra_brew_packages:
 
 # enable/disable functionality (docker will check these before launching)
 enable_jellyfin: true
+enable_delugevpn: true

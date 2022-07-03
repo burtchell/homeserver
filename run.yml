@@ -30,3 +30,10 @@
         - delugevpn
         - containers
       when: enable_delugevpn | default(False)
+
+    - role: containers/qbittorrentvpn
+      become: no
+      tags:
+        - qbittorrentvpn
+        - containers
+      when: enable_qbittorrentvpn | default(False)

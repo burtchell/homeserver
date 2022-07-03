@@ -55,3 +55,11 @@ For later runs, you may only want to update certain ansible roles. To do so, you
 ```
 ansible-playbook run.yml --tags"containers"
 ```
+
+## Extra Configuration
+
+Certain containers require extra configuration outside of running the playbook in order to work properly. Those configurations are listed here.
+
+### [binhex/arch-delugevpn](https://github.com/binhex/arch-delugevpn)
+
+Before starting the container, place a wireguard configuration file (e.g. `wg0.conf`) from your VPN in `~/docker/delugevpn/config/wireguard/`. The container will fail to start otherwise.

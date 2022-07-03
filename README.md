@@ -62,4 +62,4 @@ Certain containers require extra configuration outside of running the playbook i
 
 ### [binhex/arch-delugevpn](https://github.com/binhex/arch-delugevpn)
 
-Before starting the container, place a wireguard configuration file (e.g. `wg0.conf`) from your VPN in `~/docker/delugevpn/config/wireguard/`. The container will fail to start otherwise.
+Before starting the container, place a wireguard configuration file (e.g. `wg0.conf`) from your VPN in `~/docker/delugevpn/config/wireguard/`. The container will fail to start without this file.

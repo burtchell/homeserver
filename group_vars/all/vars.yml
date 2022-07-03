@@ -27,5 +27,4 @@ extra_brew_packages:
 
 # enable/disable functionality (docker will check these before launching)
 enable_jellyfin: true
-enable_delugevpn: false
-enable_qbittorrentvpn: true
+enable_delugevpn: true

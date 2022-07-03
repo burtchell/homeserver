@@ -26,6 +26,6 @@
       "PGID": "{{ guid }}"
       "TZ": "{{ timezone }}"
     volumes:
-      - "/home/brandon/docker/arch-delugevpn/config:/config"
+      - "/home/brandon/docker/delugevpn/config:/config"
       - "/mnt/passport:/downloads"
       - "/etc/localtime:/etc/localtime:ro"

@@ -27,19 +27,27 @@ Clone this repo on the client.
 git clone https://github.com/dukeofjukes/homeserver
 ```
 
-Create a host variable file and adjust the variables to overwrite `./group_vars/all/vars.yml`
+<!-- Create a host variable file. -->
+<!---->
+<!-- ``` -->
+<!-- cd homeserver/ -->
+<!-- mkdir -p host_vars/YOUR_HOSTNAME -->
+<!-- vi host_vars/YOUR_HOSTNAME -->
+<!-- ``` -->
+
+Create a `vars.yml` file for your host to override variables in `./group_vars/all/vars.yml`.
 
 ```
-cd homeserver/
-mkdir -p host_vars/YOUR_HOSTNAME
-vi host_vars/YOUR_HOSTNAME
+mkdir -p group_vars/YOUR_HOSTNAME/
+cp ./group_vars/all/vars.yml ./group_vars/YOUR_HOSTNAME/
+vi ./group_vars/YOUR_HOSTNAME/vars.yml
 ```
 
 Create a `host` file with these contents:
 
 ```
-[your_hostname]
-your_hostname ansible_host=1.1.1.1 ansible_port=1111 ansible_user=username ansible_connection=ssh ansible_ssh_private_key_file=/home/client_username/.ssh/homeserver
+[YOUR_HOSTNAME]
+YOUR_HOSTNAME ansible_host=1.1.1.1 ansible_port=1111 ansible_user=host_username ansible_connection=ssh ansible_ssh_private_key_file=/home/client_username/.ssh/homeserver
 ```
 
 Run the playbook:
@@ -50,7 +58,7 @@ ansible-playbook run.yml -K
 
 Note: The `-K` parameter is only necessary for the first run, since the playbook configures passwordless sudo.
 
-For later runs, you may only want to update certain ansible roles. To do so, you can run the playbook like this:
+For later runs, you may only want to update certain ansible roles. To do so, you can run the playbook like this, using tags from `run.yml`:
 
 ```
 ansible-playbook run.yml --tags"containers"

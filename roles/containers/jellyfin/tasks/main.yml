@@ -13,14 +13,14 @@
     image: "lscr.io/linuxserver/jellyfin"
     pull: yes
     privileged: yes
-    state: 'started'
+    state: "started"
     env:
       "PUID": "{{ guid }}"
       "PGID": "{{ guid }}"
       "TZ": "{{ timezone }}"
       "VERSION": "latest"
     volumes:
-      - "/home/brandon/docker/jellyfin/config:/config"
+      - "{{ docker_dir }}/{{ container_name }}/config:/config"
       - "/mnt/passport/Movies:/data/movies"
       - "/mnt/passport/Shows:/data/tvshows"
     # mounts:

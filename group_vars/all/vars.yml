@@ -1,3 +1,10 @@
+#####
+#
+# Don't change these variables. Instead, copy this file into
+# group_vars/YOUR_HOSTNAME/vars.yml and override the values there.
+#
+#####
+
 # misc.
 username: username
 guid: "1000"

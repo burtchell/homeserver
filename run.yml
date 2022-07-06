@@ -24,9 +24,9 @@
         - containers
       when: enable_jellyfin | default(False)
 
-    - role: containers/delugevpn
+    - role: containers/deluge
       become: no
       tags:
-        - delugevpn
+        - deluge
         - containers
-      when: enable_delugevpn | default(False)
+      when: enable_deluge | default(False)

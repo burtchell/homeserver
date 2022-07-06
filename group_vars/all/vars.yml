@@ -34,6 +34,8 @@ extra_brew_packages:
 
 docker_dir: "/home/{{ username }}/docker"
 
+colorscheme: nord
+
 # enable/disable functionality (docker will check these before launching)
 enable_jellyfin: false
 enable_delugevpn: false

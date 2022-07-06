@@ -8,7 +8,7 @@ stylesheet:
 
 header: true
 footer: false
-columns: 4
+columns: 3
 connectivityCheck: true
 
 theme: default
@@ -64,16 +64,6 @@ services:
     icon: "fas fa-cog"
     items:
   {% for item in web_applications if "system" in item.category and item.url != "" %}
-    - name: "{{ item.name }}"
-        logo: "{{ item.logo }}"
-        url: "{{ item.url }}"
-        target: "_blank"
-  {% endfor %}
-
-  - name: "Home Automation"
-    icon: "fas fa-home"
-    items:
-  {% for item in web_applications if "smarthome" in item.category and item.url != "" %}
     - name: "{{ item.name }}"
         logo: "{{ item.logo }}"
         url: "{{ item.url }}"

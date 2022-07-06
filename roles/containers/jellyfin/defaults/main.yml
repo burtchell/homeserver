@@ -1,9 +1,4 @@
 ---
 container_name: jellyfin
 
-# url: "jellyfin.{{ host_local }}"
-
-# homer_category: media
-
-# ip_address: "{{ swag_base }}.5"
-# ip_address: "192.168.1.179"
+homer_category: media

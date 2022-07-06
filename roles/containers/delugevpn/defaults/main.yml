@@ -1,5 +1,4 @@
 ---
 container_name: delugevpn
-# url: "deluge.{{ host_local }}"
 
-# homer_category: _fill_in_later_
+homer_category: media

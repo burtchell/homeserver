@@ -30,3 +30,17 @@
         - deluge
         - containers
       when: enable_deluge | default(False)
+
+    - role: containers/radarr
+      become: no
+      tags:
+        - radarr
+        - containers
+      when: enable_radarr | default(False)
+
+    - role: containers/sonarr
+      become: no
+      tags:
+        - sonarr
+        - containers
+      when: enable_sonarr | default(False)

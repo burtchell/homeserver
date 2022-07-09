@@ -1,28 +1,20 @@
 ---
-- name: Make sure that QuickSync packages are installed
-  become: yes
-  package:
-    name:
-      - vainfo
-      - intel-media-va-driver-non-free
-    state: present
-
-- name: Make sure the {{ container_name }} container is created and running
+- name: Make sure the {{ container_name }} container is created and running.
   docker_container:
     name: "{{ container_name }}"
-    image: "lscr.io/linuxserver/jellyfin"
+    image: "lscr.io/linuxserver/radarr"
     pull: yes
-    privileged: yes
     state: "started"
     env:
       "PUID": "{{ guid }}"
       "PGID": "{{ guid }}"
+      "UMASK": "002"
       "TZ": "{{ timezone }}"
       "VERSION": "latest"
     volumes:
       - "{{ docker_dir }}/{{ container_name }}/config:/config"
       - "{{ media_dir }}/Movies:/data/movies"
-      - "{{ media_dir }}/Shows:/data/tv"
+      - "{{ media_dir }}/Downloads:/data/downloads"
     ports:
-      - 8096:8096
+      - 7878:7878
     restart_policy: unless-stopped

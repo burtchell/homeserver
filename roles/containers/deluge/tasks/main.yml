@@ -27,5 +27,5 @@
       "TZ": "{{ timezone }}"
     volumes:
       - "{{ docker_dir }}/{{ container_name }}/config:/config"
-      - "/mnt/passport:/downloads"
+      - "{{ media_dir }}/Downloads:/data/downloads"
       - "/etc/localtime:/etc/localtime:ro"

@@ -32,8 +32,11 @@ extra_brew_packages:
   - lazydocker
   - ripgrep
 
-docker_dir: ""
+media_dir: "" # location of media, downloads, etc.
+docker_dir: "" # location of docker container configs (probably in /home/username/docker/)
 
-# enable/disable functionality (docker will check these before launching)
+# enable/disable functionality
 enable_jellyfin: false
 enable_deluge: false
+enable_radarr: false
+enable_sonarr: false

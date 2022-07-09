@@ -44,3 +44,10 @@
         - sonarr
         - containers
       when: enable_sonarr | default(False)
+
+    - role: containers/jackett
+      become: no
+      tags:
+        - jackett
+        - containers
+      when: enable_jackett | default(False)

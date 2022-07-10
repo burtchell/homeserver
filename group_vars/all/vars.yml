@@ -32,7 +32,7 @@ extra_brew_packages:
   - lazydocker
   - ripgrep
 
-media_dir: "" # location of media, downloads, etc.
+data_dir: "" # location of media, downloads, etc.
 docker_dir: "" # location of docker container configs (probably in /home/username/docker/)
 
 # enable/disable functionality

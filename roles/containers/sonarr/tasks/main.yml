@@ -13,8 +13,7 @@
       "VERSION": "latest"
     volumes:
       - "{{ docker_dir }}/{{ container_name }}/config:/config"
-      - "{{ media_dir }}/Shows:/data/tv"
-      - "{{ media_dir }}/Downloads:/data/downloads"
+      - "{{ data_dir }}:/data"
     ports:
       - 8989:8989
     restart_policy: unless-stopped

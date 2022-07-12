@@ -41,3 +41,7 @@ enable_deluge: false
 enable_radarr: false
 enable_sonarr: false
 enable_jackett: false
+enable_homer: true
+
+colorscheme: nord
+jellyfin_to_homer_api_key: ""

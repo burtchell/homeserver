@@ -1,0 +1,52 @@
+---
+title: {{ homer_title }}
+subtitle: {{ homer_subtitle }}
+#logo: "/assets/tools/homer-icons/logo.jpg"
+
+#stylesheet:
+#  - "assets/custom.css"
+
+header: false
+footer: false
+columns: 2
+connectivityCheck: true
+
+theme: default
+
+colors:
+  light:
+    highlight-primary: "{{ colors.color0 }}"
+    highlight-secondary: "{{ colors.color0 }}"
+    highlight-hover: "{{ colors.color0 }}"
+    background: "{{ colors.background }}"
+    card-background: "{{ colors.color0 }}"
+    text: "{{ colors.color4 }}"
+    text-header: "{{ colors.color4 }}"
+    text-title: "{{ colors.foreground }}"
+    text-subtitle: "{{ colors.color15 }}"
+    status-offline: "{{ colors.color9 }}"
+    status-online: "{{ colors.color10 }}"
+
+  dark:
+    highlight-primary: "{{ colors.color0 }}"
+    highlight-secondary: "{{ colors.color0 }}"
+    highlight-hover: "{{ colors.color0 }}"
+    background: "{{ colors.background }}"
+    card-background: "{{ colors.color0 }}"
+    text: "{{ colors.color4 }}"
+    text-header: "{{ colors.color4 }}"
+    text-title: "{{ colors.foreground }}"
+    text-subtitle: "{{ colors.color15 }}"
+    status-offline: "{{ colors.color9 }}"
+    status-online: "{{ colors.color10 }}"
+
+
+services:
+  - name: "Media"
+    icon: "fas fa-photo-video"
+    items:
+      - name: "Jellyfin"
+        url: "http://192.168.1.179:8096/"
+        type: "Emby"
+        apikey: "{{ jellyfin_to_homer_api_key }}"
+        libraryType: "movies"

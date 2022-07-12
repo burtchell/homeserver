@@ -1,0 +1,8 @@
+---
+- name: Generate the Homer config file
+  template:
+    src: config.yml.j2
+    dest: "{{ docker_dir }}/{{ container_name }}/config.yml"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0644

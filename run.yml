@@ -51,3 +51,9 @@
         - jackett
         - containers
       when: enable_jackett | default(False)
+
+    - role: homer
+      become: yes
+      tags:
+        - homer
+      when: enable_homer | default(False)

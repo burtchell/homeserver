@@ -1,12 +1,13 @@
 ---
 title: {{ homer_title }}
 subtitle: {{ homer_subtitle }}
-#logo: "/assets/tools/homer-icons/logo.jpg"
+documentTitle: "firelink"
+logo: "/assets/tools/homer-icons/logo.jpg"
 
-#stylesheet:
-#  - "assets/custom.css"
+stylesheet:
+ - "assets/custom.css"
 
-header: false
+header: true
 footer: false
 columns: 2
 connectivityCheck: true
@@ -46,7 +47,29 @@ services:
     icon: "fas fa-photo-video"
     items:
       - name: "Jellyfin"
+        logo: "assets/tools/homer-icons/jellyfin.png"
         url: "http://192.168.1.179:8096/"
         type: "Emby"
         apikey: "{{ jellyfin_to_homer_api_key }}"
         libraryType: "movies"
+      - name: "Radarr"
+        logo: "assets/tools/homer-icons/radarr.png"
+        url: "http://192.168.1.179:7878/"
+        type: "Radarr"
+        apikey: "{{ radarr_api_key }}"
+      - name: "Sonarr"
+        logo: "assets/tools/homer-icons/sonarr.png"
+        url: "http://192.168.1.179:8989/"
+        type: "Sonarr"
+        apikey: "{{ sonarr_api_key }}"
+
+  - name: "Services"
+    icon: "fas fa-stream"
+    items:
+      - name: "Deluge"
+        logo: "assets/tools/homer-icons/deluge.png"
+        url: "http://192.168.1.179:8112/"
+      - name: "Jackett"
+        logo: "assets/tools/homer-icons/jackett.png"
+        url: "http://192.168.1.179:9117/"
+

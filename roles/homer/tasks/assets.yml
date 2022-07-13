@@ -1,4 +1,28 @@
 ---
+- name: Create the icons directory
+  file:
+    path: "{{ docker_dir }}/{{ container_name }}/tools/homer-icons"
+    state: directory
+    mode: 0755
+    owner: "{{ username }}"
+    group: "{{ username }}"
+
+- name: Copy the icons directory
+  copy:
+    src: files/icons/
+    dest: "{{ docker_dir }}/{{ container_name }}/tools/homer-icons/"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0644
+
+- name: Copy the custom stylesheet
+  copy:
+    src: files/custom.css
+    dest: "{{ docker_dir }}/{{ container_name }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0644
+
 - name: Generate the Homer config file
   template:
     src: config.yml.j2

@@ -9,7 +9,7 @@
 username: username
 guid: "1000"
 locale: en_US.UTF-8
-dotfiles_repo: https://github.com/dukeofjukes/dotfiles
+dotfiles_repo: ""
 timezone: "America/Chicago"
 
 # apt mirrors
@@ -23,25 +23,26 @@ extra_packages:
   - neofetch
   - tmux
   - speedtest-cli
+# extra_brew_packages:
+#   - jandedobbeleer/oh-my-posh/oh-my-posh
+#   - exa
+#   - fish
+#   - fisher
+#   - lazydocker
+#   - ripgrep
 
-extra_brew_packages:
-  - jandedobbeleer/oh-my-posh/oh-my-posh
-  - exa
-  - fish
-  - fisher
-  - lazydocker
-  - ripgrep
-
+# directories
 data_dir: "" # location of media, downloads, etc.
 docker_dir: "" # location of docker container configs (probably in /home/username/docker/)
 
-# enable/disable functionality
+# enable containers
 enable_jellyfin: false
 enable_deluge: false
 enable_radarr: false
 enable_sonarr: false
 enable_jackett: false
-enable_homer: true
+enable_homer: false
 
+# homer config
 colorscheme: nord
 jellyfin_to_homer_api_key: ""

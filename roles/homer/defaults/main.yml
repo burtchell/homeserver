@@ -3,6 +3,6 @@ container_name: homer
 
 homer_title: "our fates appear to be intertwined."
 
-homer_subtitle: "hh way I see it,"
+homer_subtitle: "The way I see it,"
 
 homer_icons_dir: "{{ docker_dir }}/{{ container_name }}/tools/homer-icons"

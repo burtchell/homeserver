@@ -40,9 +40,12 @@ enable_jellyfin: false
 enable_deluge: false
 enable_radarr: false
 enable_sonarr: false
+enable_bazarr: false
 enable_jackett: false
 enable_homer: false
 
 # homer config
 colorscheme: nord
 jellyfin_to_homer_api_key: ""
+radarr_api_key:
+sonarr_api_key:

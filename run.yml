@@ -45,6 +45,13 @@
         - containers
       when: enable_sonarr | default(False)
 
+    - role: containers/bazarr
+      become: no
+      tags:
+        - bazarr
+        - containers
+      when: enable_bazarr | default(False)
+
     - role: containers/jackett
       become: no
       tags:

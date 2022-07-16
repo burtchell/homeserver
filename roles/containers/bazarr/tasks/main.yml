@@ -1,0 +1,17 @@
+---
+- name: Make sure the {{ container_name }} container is created and running
+  docker_container:
+    name: "{{ container_name }}"
+    image: "lscr.io/linuxserver/bazarr"
+    pull: yes
+    state: "started"
+    env:
+      "PUID": "{{ guid }}"
+      "PGID": "{{ guid }}"
+      "TZ": "{{ timezone }}"
+      "VERSION": "latest"
+    volumes:
+      - "{{ docker_dir }}/{{ container_name }}/config:/config"
+      - "{{ data_dir }}:/data"
+    ports: 6767:6767
+    restart_policy: unless-stopped

@@ -59,13 +59,6 @@
         - containers
       when: enable_prowlarr | default(False)
 
-    - role: containers/jackett
-      become: no
-      tags:
-        - jackett
-        - containers
-      when: enable_jackett | default(False)
-
     - role: homer
       become: yes
       tags:

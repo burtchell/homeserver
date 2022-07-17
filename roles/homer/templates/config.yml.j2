@@ -4,15 +4,19 @@ subtitle: {{ homer_subtitle }}
 documentTitle: "firelink"
 logo: "/assets/tools/homer-icons/logo.jpg"
 
-stylesheet:
- - "assets/custom.css"
-
 header: true
 footer: false
-columns: 2
+columns: 3
 connectivityCheck: true
 
+defaults:
+  layout: columns
+  colorTheme: auto
+
 theme: default
+
+stylesheet:
+ - "assets/custom.css"
 
 colors:
   light:
@@ -46,17 +50,20 @@ services:
     icon: "fas fa-photo-video"
     items:
       - name: "Jellyfin"
+        subtitle: "TV and Movies"
         logo: "assets/tools/homer-icons/jellyfin.png"
         url: "http://192.168.1.179:8096/"
         type: "Emby"
         apikey: "{{ jellyfin_to_homer_api_key }}"
         libraryType: "movies"
       - name: "Radarr"
+        subtitle: "Movie Indexer"
         logo: "assets/tools/homer-icons/radarr.png"
         url: "http://192.168.1.179:7878/"
         type: "Radarr"
         apikey: "{{ radarr_api_key }}"
       - name: "Sonarr"
+        subtitle: "TV Indexer"
         logo: "assets/tools/homer-icons/sonarr.png"
         url: "http://192.168.1.179:8989/"
         type: "Sonarr"
@@ -66,15 +73,16 @@ services:
     icon: "fas fa-stream"
     items:
       - name: "Deluge"
+        subtitle: "Torrent Client"
         logo: "assets/tools/homer-icons/deluge.png"
         url: "http://192.168.1.179:8112/"
       - name: "Prowlarr"
+        subtitle: "Indexer Manager"
         logo: "assets/tools/homer-icons/prowlarr.png"
         url: "http://192.168.1.179:9696/"
-      - name: "Jackett"
-        logo: "assets/tools/homer-icons/jackett.png"
-        url: "http://192.168.1.179:9117/"
+        type: "Prowlarr"
+        apikey: "{{ prowlarr_api_key }}"
       - name: "Bazarr"
+        subtitle: "Subtitle Indexer"
         logo: "assets/tools/homer-icons/bazarr.png"
         url: "http://192.168.1.179:6767/"
-

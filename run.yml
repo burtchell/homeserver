@@ -52,6 +52,13 @@
         - containers
       when: enable_bazarr | default(False)
 
+    - role: containers/prowlarr
+      become: no
+      tags:
+        - prowlarr
+        - containers
+      when: enable_prowlarr | default(False)
+
     - role: containers/jackett
       become: no
       tags:

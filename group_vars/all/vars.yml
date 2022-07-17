@@ -42,6 +42,7 @@ enable_radarr: false
 enable_sonarr: false
 enable_bazarr: false
 enable_jackett: false
+enable_prowlarr: false
 enable_homer: false
 
 # homer config

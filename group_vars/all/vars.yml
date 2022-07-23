@@ -44,8 +44,9 @@ enable_bazarr: false
 enable_prowlarr: false
 enable_homer: false
 
-# homer config
 colorscheme: nord
+theme_park_repo: "ghcr.io/gilbn/theme.park"
+
 jellyfin_to_homer_api_key: ""
 radarr_api_key: ""
 sonarr_api_key: ""

@@ -10,6 +10,8 @@
       "PGID": "{{ guid }}"
       "TZ": "{{ timezone }}"
       "VERSION": "latest"
+      "DOCKER_MODS": "{{ theme_park_repo }}:{{ container_name }}"
+      "TP_THEME": '{{ colorscheme | default("") }}'
     volumes:
       - "{{ docker_dir }}/{{ container_name }}/config:/config"
       - "{{ data_dir }}:/data"

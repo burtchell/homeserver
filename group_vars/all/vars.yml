@@ -40,6 +40,7 @@ enable_jellyfin: false
 enable_deluge: false
 enable_radarr: false
 enable_sonarr: false
+enable_readarr: false
 enable_bazarr: false
 enable_prowlarr: false
 enable_homer: false

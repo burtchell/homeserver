@@ -45,6 +45,13 @@
         - containers
       when: enable_sonarr | default(False)
 
+    - role: containers/readarr
+      become: no
+      tags:
+        - readarr
+        - containers
+      when: enable_readarr | default(False)
+
     - role: containers/bazarr
       become: no
       tags:

@@ -14,8 +14,6 @@
       tags:
         - mounts
 
-    # security
-
     # containers
     - role: containers/jellyfin
       become: no
@@ -23,6 +21,13 @@
         - jellyfin
         - containers
       when: enable_jellyfin | default(False)
+
+    - role: containers/calibre
+      become: no
+      tags:
+        - calibre
+        - containers
+      when: enable_calibre | default(False)
 
     - role: containers/deluge
       become: no

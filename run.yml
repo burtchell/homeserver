@@ -22,13 +22,6 @@
         - containers
       when: enable_jellyfin | default(False)
 
-    - role: containers/calibre
-      become: no
-      tags:
-        - calibre
-        - containers
-      when: enable_calibre | default(False)
-
     - role: containers/deluge
       become: no
       tags:
@@ -50,13 +43,6 @@
         - containers
       when: enable_sonarr | default(False)
 
-    - role: containers/readarr
-      become: no
-      tags:
-        - readarr
-        - containers
-      when: enable_readarr | default(False)
-
     - role: containers/bazarr
       become: no
       tags:
@@ -70,6 +56,13 @@
         - prowlarr
         - containers
       when: enable_prowlarr | default(False)
+
+    - role: containers/openbooks
+      become: no
+      tags:
+        - openbooks
+        - containers
+      when: enable_openbooks | default(False)
 
     - role: homer
       become: yes

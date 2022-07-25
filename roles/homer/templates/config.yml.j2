@@ -72,6 +72,10 @@ services:
 #        subtitle: "Book Indexer"
         logo: "assets/tools/homer-icons/readarr.png"
         url: "http://{{ ansible_host }}:8787/"
+      - name: "Calibre"
+        url: "http://{{ ansible_host }}:7070/"
+      - name: "Openbooks"
+        url: "http://{{ ansible_host }}:8181/"
 
   - name: "Services"
     icon: "fas fa-stream"

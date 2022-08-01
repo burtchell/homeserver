@@ -6,7 +6,7 @@ logo: "/assets/tools/homer-icons/logo.jpg"
 
 header: true
 footer: false
-columns: 3
+columns: 4
 connectivityCheck: true
 
 defaults:
@@ -50,50 +50,43 @@ services:
     icon: "fas fa-photo-video"
     items:
       - name: "Jellyfin"
-#        subtitle: "TV and Movies"
         logo: "assets/tools/homer-icons/jellyfin.png"
         url: "http://{{ ansible_host }}:8096/"
         type: "Emby"
         apikey: "{{ jellyfin_to_homer_api_key }}"
         libraryType: "movies"
+      - name: "Openbooks"
+        logo: "assets/tools/homer-icons/openbooks.png"
+        url: "http://{{ ansible_host }}:8181/"
+
+  - name: "Indexers"
+    icon: "fas fa-magnifying-glass"
+    items:
+      - name: "Prowlarr"
+        logo: "assets/tools/homer-icons/prowlarr.png"
+        url: "http://{{ ansible_host }}:9696/"
+        type: "Prowlarr"
+        apikey: "{{ prowlarr_api_key }}"
       - name: "Radarr"
-#        subtitle: "Movie Indexer"
         logo: "assets/tools/homer-icons/radarr.png"
         url: "http://{{ ansible_host }}:7878/"
         type: "Radarr"
         apikey: "{{ radarr_api_key }}"
       - name: "Sonarr"
-#        subtitle: "TV Indexer"
         logo: "assets/tools/homer-icons/sonarr.png"
         url: "http://{{ ansible_host }}:8989/"
         type: "Sonarr"
         apikey: "{{ sonarr_api_key }}"
-      - name: "Readarr"
-#        subtitle: "Book Indexer"
-        logo: "assets/tools/homer-icons/readarr.png"
-        url: "http://{{ ansible_host }}:8787/"
-      - name: "Calibre"
-        url: "http://{{ ansible_host }}:7070/"
-      - name: "Openbooks"
-        url: "http://{{ ansible_host }}:8181/"
+      - name: "Bazarr"
+        logo: "assets/tools/homer-icons/bazarr.png"
+        url: "http://{{ ansible_host }}:6767/"
 
   - name: "Services"
     icon: "fas fa-stream"
     items:
       - name: "Deluge"
-#        subtitle: "Torrent Client"
         logo: "assets/tools/homer-icons/deluge.svg"
         url: "http://{{ ansible_host }}:8112/"
-      - name: "Prowlarr"
-#        subtitle: "Indexer Manager"
-        logo: "assets/tools/homer-icons/prowlarr.png"
-        url: "http://{{ ansible_host }}:9696/"
-        type: "Prowlarr"
-        apikey: "{{ prowlarr_api_key }}"
-      - name: "Bazarr"
-#        subtitle: "Subtitle Indexer"
-        logo: "assets/tools/homer-icons/bazarr.png"
-        url: "http://{{ ansible_host }}:6767/"
 
   - name: "System"
     icon: "fas fa-cog"

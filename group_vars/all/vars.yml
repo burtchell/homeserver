@@ -11,6 +11,8 @@ guid: "1000"
 locale: en_US.UTF-8
 dotfiles_repo: ""
 timezone: "America/Chicago"
+email: ""
+domain: ""
 
 # apt mirrors
 version: focal

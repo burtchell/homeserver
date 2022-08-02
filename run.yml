@@ -7,12 +7,12 @@
     - role: system
       tags:
         - system
-    - role: docker
-      tags:
-        - docker
     - role: mounts
       tags:
         - mounts
+    - role: docker
+      tags:
+        - docker
 
     # containers
     - role: containers/jellyfin

@@ -4,6 +4,18 @@ An Ansible playbook that sets up an Ubuntu-based home media server.
 
 Assumes a fresh install of Ubuntu Server 20.04 on the host, and an Ubuntu-based distro on the client machine (for playbook configuration and running).
 
+## Features
+
+The following services are included:
+
+- [Jellyfin](https://jellyfin.org/): An open-source media-hosting service with a clean multiplatform client.
+- [Radarr](https://radarr.video/): Indexer for movies.
+- [Sonarr](https://sonarr.tv/): Indexer for TV.
+- [Prowlarr](https://wiki.servarr.com/prowlarr): Indexer manager for "-arr" services.
+- [arch-delugevpn](https://github.com/binhex/arch-delugevpn): BitTorrent client with support for OpenVPN and Wireguard killswitch.
+- [Openbooks](https://github.com/evan-buss/openbooks): IRC download client for ebooks.
+- [Homer](https://github.com/bastienwirtz/homer): A static, easily customizable homepage for services.
+
 ## Setup
 
 Update and upgrade packages (reboot if necessary), and install Ansible:
@@ -71,3 +83,9 @@ Certain containers require extra configuration outside of running the playbook i
 ### [binhex/arch-delugevpn](https://github.com/binhex/arch-delugevpn)
 
 Before starting the container, place a wireguard configuration file (e.g. `wg0.conf`) from your VPN in `~/docker/delugevpn/config/wireguard/`. The container will fail to start without this file.
+
+## Acknowledgements
+
+- Thanks to [notthebee](https://github.com/notthebee) for their [infra repository](https://github.com/notthebee/infra) and their [YouTube videos](https://www.youtube.com/c/WolfgangsChannel) that sent me down this rabbit hole in the first place. Lots of code is "borrowed" from their ansible playbook.
+
+- Thanks to [TRaSH Guides](https://trash-guides.info/) for their extremely helpful Radarr and Sonarr custom format/profile guides.

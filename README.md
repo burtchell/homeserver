@@ -11,6 +11,7 @@ The following services are included:
 - [Jellyfin](https://jellyfin.org/): An open-source media-hosting service with a clean multiplatform client.
 - [Radarr](https://radarr.video/): Indexer for movies.
 - [Sonarr](https://sonarr.tv/): Indexer for TV.
+- [Bazarr](https://www.bazarr.media/): Indexer for subtitles.
 - [Prowlarr](https://wiki.servarr.com/prowlarr): Indexer manager for "-arr" services.
 - [arch-delugevpn](https://github.com/binhex/arch-delugevpn): BitTorrent client with support for OpenVPN and Wireguard killswitch.
 - [Openbooks](https://github.com/evan-buss/openbooks): IRC download client for ebooks.

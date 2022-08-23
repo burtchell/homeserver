@@ -8,9 +8,9 @@
     state: "started"
     capabilities: "NET_ADMIN"
     ports:
-      - 0.0.0.0:8112:8112
-      - 58846:58846
-      - 0.0.0.0:8118:8118
+      - "0.0.0.0:8112:8112"
+      - "58846:58846"
+      - "0.0.0.0:8118:8118"
     env:
       "VPN_ENABLED": "yes"
       "VPN_PROV": "custom"

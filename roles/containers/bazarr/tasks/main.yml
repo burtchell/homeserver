@@ -2,7 +2,7 @@
 - name: Make sure the {{ container_name }} container is created and running
   docker_container:
     name: "{{ container_name }}"
-    image: "lscr.io/linuxserver/bazarr"
+    image: "linuxserver/bazarr"
     pull: yes
     state: "started"
     env:

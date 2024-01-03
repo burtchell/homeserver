@@ -52,12 +52,15 @@
     name: "{{ extra_packages }}"
     state: present
 
-- name: Disable SSH password auth
-  lineinfile:
-    dest: /etc/ssh/sshd_config
-    regexp: "^#PasswordAuthentication yes"
-    line: "PasswordAuthentication no"
-  register: sshd_config
+# NOTE: I was getting lots of issues with logging in for the first time, since
+#   I assume the host was unable to authenticate the client without an initial password.
+#   Commenting this out for now since I log in so rarely it doesn't hurt to have a password.
+# - name: Disable SSH password auth
+#   lineinfile:
+#     dest: /etc/ssh/sshd_config
+#     regexp: "^#PasswordAuthentication yes"
+#     line: "PasswordAuthentication no"
+#   register: sshd_config
 
 - name: Enable passwordless sudo for "{{ username }}"
   lineinfile:

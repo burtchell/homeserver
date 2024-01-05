@@ -64,6 +64,13 @@
         - containers
       when: enable_portainer | default(False)
 
+    - role: containers/syncthing
+      become: no
+      tags:
+        - syncthing
+        - containers
+      when: enable_syncthing | default(False)
+
     - role: homer
       become: yes
       tags:

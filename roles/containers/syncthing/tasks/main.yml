@@ -2,19 +2,21 @@
 - name: Make sure {{ container_name }} container is created and running
   docker_container:
     name: "{{ container_name }}"
-    image: "portainer/portainer-ce:latest"
+    image: lscr.io/linuxserver/syncthing
     pull: yes
     privileged: yes
     state: "started"
-    command: "-H unix:///var/run/docker.sock"
     env:
       "PUID": "{{ guid }}"
       "PGID": "{{ guid }}"
       "TZ": "{{ timezone }}"
       "VERSION": "latest"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "{{ docker_dir }}/{{ container_name }}/data:/data"
+      - "{{ docker_dir }}/{{ container_name }}/config:/config"
+      - "{{ data_dir }}:/data"
     ports:
-      - "9000:9000"
+      - 8384:8384
+      - 22000:22000/tcp
+      - 22000:22000/udp
+      - 21027:21027/udp
     restart_policy: unless-stopped

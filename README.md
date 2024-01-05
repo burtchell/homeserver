@@ -14,8 +14,9 @@ The following services are included:
 - [Bazarr](https://www.bazarr.media/): Indexer for subtitles.
 - [Prowlarr](https://wiki.servarr.com/prowlarr): Indexer manager for "-arr" services.
 - [arch-delugevpn](https://github.com/binhex/arch-delugevpn): BitTorrent client with support for OpenVPN and Wireguard killswitch.
-- [Homer](https://github.com/bastienwirtz/homer): A static, easily customizable homepage for services.
+- [Syncthing](https://syncthing.net/): A continuous P2P file synchronization program.
 - [Portainer](https://www.portainer.io/): Container management GUI for Docker.
+- [Homer](https://github.com/bastienwirtz/homer): A static, easily customizable homepage for services.
 
 ## Setup
 

@@ -81,6 +81,9 @@ services:
       - name: "Deluge"
         logo: "assets/tools/homer-icons/deluge.svg"
         url: "http://{{ ansible_host }}:8112/"
+      - name: "Syncthing"
+        logo: "assets/tools/homer-icons/syncthing.svg"
+        url: "http://{{ ansible_host }}:8384/"
 
   - name: "System"
     icon: "fas fa-cog"

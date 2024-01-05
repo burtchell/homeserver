@@ -52,11 +52,6 @@ services:
       - name: "Jellyfin"
         logo: "assets/tools/homer-icons/jellyfin.png"
         url: "http://{{ ansible_host }}:8096/"
-        apikey: "{{ jellyfin_to_homer_api_key }}"
-        libraryType: "movies"
-      - name: "Openbooks"
-        logo: "assets/tools/homer-icons/openbooks.png"
-        url: "http://{{ ansible_host }}:8181/"
 
   - name: "Indexers"
     icon: "fas fa-magnifying-glass"
@@ -93,3 +88,6 @@ services:
       - name: "tp-link"
         logo: "assets/tools/homer-icons/tp-link.png"
         url: "http://192.168.0.1/"
+      - name: "Portainer"
+        logo: "assets/tools/homer-icons/portainer.svg"
+        url: "http://{{ ansible_host }}:9000/"

@@ -64,6 +64,13 @@
         - containers
       when: enable_openbooks | default(False)
 
+    - role: containers/portainer
+      become: no
+      tags:
+        - portainer
+        - containers
+      when: enable_portainer | default(False)
+
     - role: homer
       become: yes
       tags:

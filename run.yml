@@ -57,13 +57,6 @@
         - containers
       when: enable_prowlarr | default(False)
 
-    - role: containers/openbooks
-      become: no
-      tags:
-        - openbooks
-        - containers
-      when: enable_openbooks | default(False)
-
     - role: containers/portainer
       become: no
       tags:

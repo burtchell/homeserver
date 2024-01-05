@@ -14,8 +14,8 @@ The following services are included:
 - [Bazarr](https://www.bazarr.media/): Indexer for subtitles.
 - [Prowlarr](https://wiki.servarr.com/prowlarr): Indexer manager for "-arr" services.
 - [arch-delugevpn](https://github.com/binhex/arch-delugevpn): BitTorrent client with support for OpenVPN and Wireguard killswitch.
-- [Openbooks](https://github.com/evan-buss/openbooks): IRC download client for ebooks.
 - [Homer](https://github.com/bastienwirtz/homer): A static, easily customizable homepage for services.
+- [Portainer](https://www.portainer.io/): Container management GUI for Docker.
 
 ## Setup
 
@@ -39,14 +39,6 @@ Clone this repo on the client.
 ```
 git clone https://github.com/dukeofjukes/homeserver
 ```
-
-<!-- Create a host variable file. -->
-<!---->
-<!-- ``` -->
-<!-- cd homeserver/ -->
-<!-- mkdir -p host_vars/YOUR_HOSTNAME -->
-<!-- vi host_vars/YOUR_HOSTNAME -->
-<!-- ``` -->
 
 Create a `vars.yml` file for your host to override variables in `./group_vars/all/vars.yml`.
 

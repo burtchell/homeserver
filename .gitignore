@@ -1,3 +1,5 @@
 /hosts
 /group_vars/
 !/group_vars/all/vars.yml
+
+.DS_store

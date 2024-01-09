@@ -70,6 +70,13 @@
         - syncthing
         - containers
       when: enable_syncthing | default(False)
+    
+    - role: containers/nginx
+      become: no
+      tags:
+        - nginx
+        - containers
+      when: enable_nginx | default(False)
 
     - role: homer
       become: yes

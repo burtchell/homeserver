@@ -1,0 +1,21 @@
+---
+- name: Make sure the {{ container_name }} container is created and running
+  docker_container:
+    name: "{{ container_name }}"
+    image: "jc21/nginx-proxy-manager:latest"
+    pull: yes
+    privileged: yes
+    state: "started"
+    env:
+      "PUID": "{{ guid }}"
+      "PGID": "{{ guid }}"
+      "TZ": "{{ timezone }}"
+      "VERSION": "latest"
+    volumes:
+      - "{{ docker_dir }}/{{ container_name }}/data:/data"
+      - "{{ docker_dir }}/{{ container_name }}/letsencrypt:/etc/letsencrypt"
+    ports:
+      - 40080:80
+      - 40081:81
+      - 40443:443
+    restart_policy: unless-stopped

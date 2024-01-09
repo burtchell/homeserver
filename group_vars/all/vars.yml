@@ -45,6 +45,7 @@ enable_prowlarr: false
 enable_portainer: false
 enable_syncthing: false
 enable_homer: false
+enable_nginx_proxy_manager: false
 
 colorscheme: nord
 theme_park_repo: "ghcr.io/gilbn/theme.park"

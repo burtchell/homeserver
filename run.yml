@@ -75,4 +75,5 @@
       become: yes
       tags:
         - homer
+        - containers
       when: enable_homer | default(False)

@@ -90,7 +90,7 @@ services:
     items:
       - name: "Router"
         logo: "assets/tools/homer-icons/tp-link.png"
-        url: "http://192.168.1.1/"
+        url: "http://{{ router_ip }}/"
       - name: "Portainer"
         logo: "assets/tools/homer-icons/portainer.svg"
         url: "http://{{ ansible_host }}:9000/"

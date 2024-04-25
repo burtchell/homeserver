@@ -15,6 +15,14 @@
     group: "{{ username }}"
     mode: 0644
 
+- name: Copy favicons
+  copy:
+    src: files/favicons/
+    dest: "{{ docker_dir }}/{{ container_name }}/icons/"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0644
+
 - name: Copy the custom stylesheet
   copy:
     src: files/custom.css

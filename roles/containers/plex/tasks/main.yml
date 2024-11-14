@@ -1,0 +1,23 @@
+---
+- name: Make sure the {{ container_name }} container is created and running
+  docker_container:
+    name: "{{ container_name }}"
+    image: "linuxserver/plex"
+    pull: yes
+    privileged: yes
+    state: "started"
+    env:
+      "PUID": "{{ guid }}"
+      "PGID": "{{ guid }}"
+      "TZ": "{{ timezone }}"
+      "VERSION": "latest"
+      # "PLEX_CLAIM": "optional"
+    volumes:
+      - "{{ docker_dir }}/{{ container_name }}/config:/config"
+      - "{{ data_dir }}/media:/data/media"
+    devices:
+      - "/dev/dri:/dev/dri"
+    ports:
+      - 32400:32400
+    restart_policy: unless-stopped
+

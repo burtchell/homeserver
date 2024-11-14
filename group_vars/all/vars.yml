@@ -37,6 +37,7 @@ docker_dir: "" # location of docker container configs (probably in /home/usernam
 
 # enable containers
 enable_jellyfin: false
+enable_plex: false
 enable_deluge: false
 enable_radarr: false
 enable_sonarr: false

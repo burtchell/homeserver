@@ -52,6 +52,9 @@ services:
       - name: "Jellyfin"
         logo: "assets/tools/homer-icons/jellyfin.png"
         url: "http://{{ ansible_host }}:8096/"
+      - name: "Plex"
+        logo: "assets/tools/homer-icons/plex.png"
+        url: "http://{{ ansible_host }}:32400/"
 
   - name: "Indexers"
     icon: "fas fa-magnifying-glass"

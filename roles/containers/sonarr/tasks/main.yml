@@ -8,7 +8,7 @@
     env:
       "PUID": "{{ guid }}"
       "PGID": "{{ guid }}"
-      "UMASK": "002"
+      # "UMASK": "002"
       "TZ": "{{ timezone }}"
       "VERSION": "latest"
       "DOCKER_MODS": "{{ theme_park_repo }}:{{ container_name }}"
